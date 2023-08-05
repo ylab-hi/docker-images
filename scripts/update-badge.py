@@ -1,6 +1,8 @@
 from pathlib import Path
 from dataclasses import dataclass
 
+BASE_URL = "https://hub.docker.com/repository/docker/yanglabinfo/{}".format
+
 
 @dataclass
 class Badge:
@@ -35,7 +37,7 @@ def create_table(recipes):
     table = "|Tool | Pull | Stars| Image Size|\n" "|---|---|---|---|\n"
     for recipe in recipes:
         badges = Badge(recipe, get_version(recipe))
-        table += f"|{recipe}| {badges.pull}| {badges.star}| {badges.size}|\n"
+        table += f"|[{recipe}]({BASE_URL(recipe)})| {badges.pull}| {badges.star}| {badges.size}|\n"
     return table
 
 

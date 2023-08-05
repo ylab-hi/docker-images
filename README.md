@@ -4,17 +4,17 @@ This repository hosts Docker images for various tools used in our lab.
 
 <!-- begin badge -->
 
-| Tool        | Pull                                                                                             | Stars                                                                                            | Image Size                                                                                                            |
-| ----------- | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------- |
-| binder      | ![Docker Pulls](https://img.shields.io/docker/pulls/yanglabinfo/binder?style=for-the-badge)      | ![Docker Stars](https://img.shields.io/docker/stars/yanglabinfo/binder?style=for-the-badge)      | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/yanglabinfo/binder/latest?style=for-the-badge)    |
-| scanexitron | ![Docker Pulls](https://img.shields.io/docker/pulls/yanglabinfo/scanexitron?style=for-the-badge) | ![Docker Stars](https://img.shields.io/docker/stars/yanglabinfo/scanexitron?style=for-the-badge) | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/yanglabinfo/scanexitron/v1.1?style=for-the-badge) |
+| Tool                                                                            | Pull                                                                                             | Stars                                                                                            | Image Size                                                                                                            |
+| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------- |
+| [binder](https://hub.docker.com/repository/docker/yanglabinfo/binder)           | ![Docker Pulls](https://img.shields.io/docker/pulls/yanglabinfo/binder?style=for-the-badge)      | ![Docker Stars](https://img.shields.io/docker/stars/yanglabinfo/binder?style=for-the-badge)      | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/yanglabinfo/binder/latest?style=for-the-badge)    |
+| [scanexitron](https://hub.docker.com/repository/docker/yanglabinfo/scanexitron) | ![Docker Pulls](https://img.shields.io/docker/pulls/yanglabinfo/scanexitron?style=for-the-badge) | ![Docker Stars](https://img.shields.io/docker/stars/yanglabinfo/scanexitron?style=for-the-badge) | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/yanglabinfo/scanexitron/v1.1?style=for-the-badge) |
 
 <!-- end badge -->
 
 # TODO
 
 - [x] add badge to show image status
-- [ ] use image version as tag
+- [x] use image version as tag
 - [ ] use cache to reduce build time
 - [ ] only build modified recipe
 - [ ] add test CI to test pr
