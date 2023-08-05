@@ -13,7 +13,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        recipes: ["binder","scanexitron"]
+        recipes: ["binder", "scanexitron"]
 
     steps:
       - name: Checkout

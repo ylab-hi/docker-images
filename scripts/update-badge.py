@@ -86,3 +86,12 @@ def update_badge(recipes):
 
     except Exception as e:
         print(f"update readme error happend {e}")
+
+
+def main():
+    recipes = get_recipes()
+    update_badge(recipes)
+
+
+if __name__ == "__main__":
+    main()
