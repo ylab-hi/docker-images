@@ -2,8 +2,14 @@
 
 This repository hosts Docker images for various tools used in our lab.
 
+<!-- begin badge -->
+
+<!-- begin badge -->
+
 # TODO
 
+- [ ] add badge to show image status
+- [ ] use image version as tag
 - [ ] use cache to reduce build time
 - [ ] only build modified recipe
 - [ ] add test CI to test pr

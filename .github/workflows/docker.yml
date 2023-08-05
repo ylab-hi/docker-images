@@ -34,4 +34,4 @@ jobs:
           context: ./recipes/${{ matrix.recipes }}
           platforms: linux/amd64,linux/arm64
           push: true
-          tags: yanglabinfo/${{ matrix.recipes }}:${{ github.sha }}
+          tags: yanglabinfo/${{ matrix.recipes }}:latest
