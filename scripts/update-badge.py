@@ -86,7 +86,7 @@ def update_badge(recipes):
             f.writelines(content)
 
     except Exception as e:
-        print(f"update readme error happend {e}")
+        print(f"update readme error happen {e}")
 
 
 def main():

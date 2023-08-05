@@ -70,6 +70,43 @@ Replace <Your Docker Hub Username> with our Docker Hub username, <Tool Name> wit
 We welcome contributions from everyone in the lab.
 If you have updates or new Dockerfiles to add, please submit a pull request.
 
+1. create a new directory under recipes
+
+For example, suppose we introduce a new recipe called "scannls".
+First, make a new directory.
+Create a new `Dockerfile` after that.
+The directory structure will be as follows:
+
+```bash
+.
+├── LICENSE
+├── README.md
+├── recipes
+│   ├── scannls
+│   │   └── Dockerfile
+│   ├── binder
+│   │   └── Dockerfile
+│   └── scanexitron
+│       └── Dockerfile
+└── scripts
+    └── update-badge.py
+```
+
+2. Add version for the image in `Dockerfile`
+
+As the image's tag, We will use `VERSION` variable as tag of the image.
+If no `VERSION` is specified, `latest` will be used.
+
+```dockerfile
+ARG VERSION=v1.1
+```
+
+At last, we may make use of the image via
+
+```
+docker pull yanglabinfo/scannls:v1.1
+```
+
 # Questions
 
 If you have questions or encounter any issues, please open an issue in this repository.
