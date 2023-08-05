@@ -31,15 +31,10 @@ class Badge:
         return self.badges["size"]
 
 
-# ![Docker Pulls](https://img.shields.io/docker/pulls/yanglabinfo/binder?style=for-the-badge)
-# ![Docker Stars](https://img.shields.io/docker/stars/yanglabinfo/binder?style=for-the-badge)
-# ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/yanglabinfo/binder/latest)
-
-
 def create_table(recipes):
     table = "|Tool | Pull | Stars| Image Size|\n" "|---|---|---|---|\n"
     for recipe in recipes:
-        badges = Badge(recipe, "latest")
+        badges = Badge(recipe, get_version(recipe))
         table += f"|{recipe}| {badges.pull}| {badges.star}| {badges.size}|\n"
     return table
 
@@ -50,6 +45,15 @@ def get_recipes():
         if p.is_dir():
             recipes.append(p.name)
     return recipes
+
+
+def get_version(recipe):
+    with open(f"recipes/{recipe}/Dockerfile") as f:
+        for line in f:
+            if line.startswith("ARG VERSION"):
+                return line.split("=")[1].strip()
+
+    return "latest"
 
 
 def update_badge(recipes):

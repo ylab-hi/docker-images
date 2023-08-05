@@ -4,10 +4,10 @@ This repository hosts Docker images for various tools used in our lab.
 
 <!-- begin badge -->
 
-| Tool        | Pull                                                                                             | Stars                                                                                            | Image Size                                                                                                              |
-| ----------- | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------- |
-| binder      | ![Docker Pulls](https://img.shields.io/docker/pulls/yanglabinfo/binder?style=for-the-badge)      | ![Docker Stars](https://img.shields.io/docker/stars/yanglabinfo/binder?style=for-the-badge)      | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/yanglabinfo/binder/latest?style=for-the-badge)      |
-| scanexitron | ![Docker Pulls](https://img.shields.io/docker/pulls/yanglabinfo/scanexitron?style=for-the-badge) | ![Docker Stars](https://img.shields.io/docker/stars/yanglabinfo/scanexitron?style=for-the-badge) | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/yanglabinfo/scanexitron/latest?style=for-the-badge) |
+| Tool        | Pull                                                                                             | Stars                                                                                            | Image Size                                                                                                            |
+| ----------- | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------- |
+| binder      | ![Docker Pulls](https://img.shields.io/docker/pulls/yanglabinfo/binder?style=for-the-badge)      | ![Docker Stars](https://img.shields.io/docker/stars/yanglabinfo/binder?style=for-the-badge)      | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/yanglabinfo/binder/latest?style=for-the-badge)    |
+| scanexitron | ![Docker Pulls](https://img.shields.io/docker/pulls/yanglabinfo/scanexitron?style=for-the-badge) | ![Docker Stars](https://img.shields.io/docker/stars/yanglabinfo/scanexitron?style=for-the-badge) | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/yanglabinfo/scanexitron/v1.1?style=for-the-badge) |
 
 <!-- end badge -->
 
