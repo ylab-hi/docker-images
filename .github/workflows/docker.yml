@@ -28,10 +28,19 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
+      - name: Extract version
+        id: extract_version
+        run: |
+          VERSION=$(grep 'ARG VERSION=' ./recipes/${{ matrix.recipes }}/Dockerfile | awk -F'=' '{print $2}')
+          if [ -z "$VERSION" ]; then
+            VERSION='latest'
+          fi
+          echo "::set-output name=version::${VERSION}"
+
       - name: Build and push
         uses: docker/build-push-action@v4
         with:
           context: ./recipes/${{ matrix.recipes }}
           platforms: linux/amd64,linux/arm64,linux/arm/v7
           push: true
-          tags: yanglabinfo/${{ matrix.recipes }}:latest
+          tags: yanglabinfo/${{ matrix.recipes }}:${{ steps.extract_version.outputs.version }}
