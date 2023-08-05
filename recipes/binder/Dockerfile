@@ -1,5 +1,8 @@
 FROM ubuntu:20.04 as base
 
+ARG VERSION=latest
+LABEL authors="Yangyang Li"
+
 # Config
 ARG BRANCH="master"
 ARG CLANG_VERSION=15

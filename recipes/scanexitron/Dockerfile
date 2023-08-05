@@ -4,9 +4,13 @@
 # v0.1.0
 ############################################################
 
+
+
 # set the base image to debian
 FROM linuxcontainers/debian-slim:12.1
 
+# tag version
+ARG VERSION=v1.1
 # file author
 LABEL authors="Richard A. Schaefer"
 
