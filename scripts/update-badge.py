@@ -56,25 +56,28 @@ def get_recipes():
 def update_badge(recipes):
     table = create_table(recipes)
 
-    sep1 = "<!-- begin badge -->\n"
-    sep2 = "<!-- end badge -->\n"
+    start_sep = "<!-- begin badge -->\n"
+    end_sep = "<!-- end badge -->\n"
 
     content = []
-    add = True
 
     res_name = Path("README.md")
     shutil.copyfile(res_name, res_name.with_suffix(".bak"))
 
     file_name = Path("README.md")
 
+    add = True
     with open(file_name) as f:
         for line in f:
-            if line == sep1:
+            print(f"line : {line!r}")
+            if line == start_sep:
+                print(f"!find start sep {start_sep}")
                 add = False
                 content.append(line)
                 content.append(table)
 
-            if line == sep2:
+            if line == end_sep:
+                print(f"!find end sep {end_sep}")
                 add = True
 
             if add:

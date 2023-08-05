@@ -4,7 +4,7 @@ This repository hosts Docker images for various tools used in our lab.
 
 <!-- begin badge -->
 
-<!-- begin badge -->
+<!-- end badge -->
 
 # TODO
 
