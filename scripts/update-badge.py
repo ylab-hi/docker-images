@@ -1,4 +1,3 @@
-import shutil
 from pathlib import Path
 from dataclasses import dataclass
 
@@ -60,24 +59,17 @@ def update_badge(recipes):
     end_sep = "<!-- end badge -->\n"
 
     content = []
-
-    res_name = Path("README.md")
-    shutil.copyfile(res_name, res_name.with_suffix(".bak"))
-
     file_name = Path("README.md")
 
     add = True
     with open(file_name) as f:
         for line in f:
-            print(f"line : {line!r}")
             if line == start_sep:
-                print(f"!find start sep {start_sep}")
                 add = False
                 content.append(line)
                 content.append(table)
 
             if line == end_sep:
-                print(f"!find end sep {end_sep}")
                 add = True
 
             if add:
