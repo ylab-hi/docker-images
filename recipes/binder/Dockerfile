@@ -1,6 +1,5 @@
 FROM ubuntu:20.04 as base
 
-LABEL authors="Yangyang Li"
 # Config
 ARG BRANCH="master"
 ARG CLANG_VERSION=15
