@@ -11,7 +11,7 @@ FROM linuxcontainers/debian-slim:12.1
 LABEL authors="Richard A. Schaefer"
 
 # update the sources list
-RUN apt-get update && apt-get upgrade 
+RUN apt-get -y update  && apt-get -y upgrade 
 RUN apt-get install -y curl build-essential cmake
 RUN apt-get install -y zlib1g-dev libbz2-dev liblzma-dev 
 RUN apt-get install -y libcurl-ocaml-dev libssl-dev libdeflate-dev
