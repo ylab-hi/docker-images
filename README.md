@@ -2,8 +2,19 @@
 
 This repository hosts Docker images for various tools used in our lab.
 
+<!-- begin badge -->
+
+| Tool                                                                            | Pull                                                                                             | Stars                                                                                            | Image Size                                                                                                            |
+| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------- |
+| [binder](https://hub.docker.com/repository/docker/yanglabinfo/binder)           | ![Docker Pulls](https://img.shields.io/docker/pulls/yanglabinfo/binder?style=for-the-badge)      | ![Docker Stars](https://img.shields.io/docker/stars/yanglabinfo/binder?style=for-the-badge)      | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/yanglabinfo/binder/latest?style=for-the-badge)    |
+| [scanexitron](https://hub.docker.com/repository/docker/yanglabinfo/scanexitron) | ![Docker Pulls](https://img.shields.io/docker/pulls/yanglabinfo/scanexitron?style=for-the-badge) | ![Docker Stars](https://img.shields.io/docker/stars/yanglabinfo/scanexitron?style=for-the-badge) | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/yanglabinfo/scanexitron/v1.1?style=for-the-badge) |
+
+<!-- end badge -->
+
 # TODO
 
+- [x] add badge to show image status
+- [x] use image version as tag
 - [ ] use cache to reduce build time
 - [ ] only build modified recipe
 - [ ] add test CI to test pr
@@ -58,6 +69,43 @@ Replace <Your Docker Hub Username> with our Docker Hub username, <Tool Name> wit
 
 We welcome contributions from everyone in the lab.
 If you have updates or new Dockerfiles to add, please submit a pull request.
+
+1. create a new directory under recipes
+
+For example, suppose we introduce a new recipe called "scannls".
+First, make a new directory.
+Create a new `Dockerfile` after that.
+The directory structure will be as follows:
+
+```bash
+.
+├── LICENSE
+├── README.md
+├── recipes
+│   ├── scannls
+│   │   └── Dockerfile
+│   ├── binder
+│   │   └── Dockerfile
+│   └── scanexitron
+│       └── Dockerfile
+└── scripts
+    └── update-badge.py
+```
+
+2. Add version for the image in `Dockerfile`
+
+As the image's tag, We will use `VERSION` variable as tag of the image.
+If no `VERSION` is specified, `latest` will be used.
+
+```dockerfile
+ARG VERSION=v1.1
+```
+
+At last, we may make use of the image via
+
+```
+docker pull yanglabinfo/scannls:v1.1
+```
 
 # Questions
 

@@ -4,16 +4,20 @@
 # v0.1.0
 ############################################################
 
+
+
 # set the base image to debian
 FROM linuxcontainers/debian-slim:12.1
 
+# tag version
+ARG VERSION=v1.1
 # file author
 LABEL authors="Richard A. Schaefer"
 
 # update the sources list
 RUN apt-get -y update  && apt-get -y upgrade 
 RUN apt-get install -y curl build-essential cmake
-RUN apt-get install -y zlib1g-dev libbz2-dev liblzma-dev 
+RUN apt-get install -y zlib1g-dev libbz2-dev liblzma-dev
 RUN apt-get install -y libcurl-ocaml-dev libssl-dev libdeflate-dev
 #RUN apt-get install -y python
 
@@ -33,12 +37,3 @@ RUN curl -L https://github.com/ylab-hi/ScanExitron/archive/refs/tags/v1.1-beta.t
 RUN tar xvf ScanExitron-v1.1.tar.gz && rm ScanExitron-v1.1.tar.gz
 RUN echo 'alias ScanExitron.py="python3 /ScanExitron-1.1-beta/ScanExitron.py"' >> ~/.bashrc
 WORKDIR /
-
-
-
-
-
-
-
-
-

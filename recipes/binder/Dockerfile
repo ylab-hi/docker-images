@@ -10,9 +10,14 @@ RUN apt-get update \
  && apt-get install -yq wget gnupg \
  && rm -rf /var/lib/apt/lists/*
 
-# Add llvm repo
-RUN wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key | apt-key add -
+# Separately download and add the llvm gpg key
+RUN wget https://apt.llvm.org/llvm-snapshot.gpg.key
+RUN apt-key add llvm-snapshot.gpg.key
+RUN rm llvm-snapshot.gpg.key
+
+# Add the llvm repo to sources
 RUN echo "deb http://apt.llvm.org/focal/ llvm-toolchain-focal-${CLANG_VERSION} main" >> /etc/apt/sources.list
+
 
 # Run dependencies
 RUN apt-get update \
